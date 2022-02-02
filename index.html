@@ -474,9 +474,33 @@
     </footer>
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <button type="button" class="btn-modal" data-modal-close>
-          
-        </button>
+        <button type="button" class="btn-modal" data-modal-close></button>
+        <b>Оставьте свои данные, мы вам перезвоним</b>
+        <ul>
+          <li>
+            <input type="text" name="name" id="name" placeholder="Андрей">
+            <label for="name">Имя</label>
+          </li>
+
+          <li>
+            <input type="tel" name="tel" id="tel" placeholder="+380 96 111 11 11">
+            <label for="tel">Телефон</label>
+          </li>
+
+          <li>
+            <input type="email" name="mail" id="mail" placeholder="didu.na.selo@i.ua">
+            <label for="mail">Почта</label>
+          </li>
+        </ul>
+        <div class="cont-textarea">
+          <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+          <label for="comment">Комментарий</label>
+        </div>
+        <input type="checkbox" name="check" id="check">
+        <label for="check">
+          Соглашаюсь с рассылкой и принимаю Условия договора
+        </label>
+        <button type="submit">Отправить</button>
       </div>
     </div>
     <script src="./js/modal.js">
