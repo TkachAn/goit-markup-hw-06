@@ -471,11 +471,16 @@
           </ul>
         </div>
         <div class="email-foo">
-          <label>
-            Подпишитесь на рассылку
-            <input type="email" name="email">
-            <button type="submit"></button>
-          </label>
+          <h3 class="social-title">Подпишитесь на рассылку</h3>
+          <div>
+            <label for="email-foo">E-mail</label>
+            <input type="email" name="email" id="email-foo">
+            <button type="submit">Подписаться
+              <svg class="icon-foo">
+                <use href="./images/icon/m-defs.svg#icon-send"></use>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </footer>
@@ -520,13 +525,11 @@
         <!-- id="check" -->
         <label class="check-form">
           <input type="checkbox" name="check" >
-          Соглашаюсь с рассылкой и принимаю <a>Условия договора</a>
+          Соглашаюсь с рассылкой и принимаю <a class="us">Условия договора</a>
           <svg class="icon-form">
             <!-- <use href="./images/icon/m-defs.svg#icon-check"></use> -->
           </svg>
-          <svg class="icon-form">
-            <use href="./images/icon/m-defs.svg#icon-send"></use>
-          </svg>
+          
         </label>
         <button type="submit">Отправить</button>
       </div>
