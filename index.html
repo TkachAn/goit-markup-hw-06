@@ -470,35 +470,63 @@
             </li>
           </ul>
         </div>
+        <div class="email-foo">
+          <label>
+            Подпишитесь на рассылку
+            <input type="email" name="email">
+            <button type="submit"></button>
+          </label>
+        </div>
       </div>
     </footer>
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <button type="button" class="btn-modal" data-modal-close></button>
+        <button type="button" class="btn-modal" data-modal-close>
+          <svg class="close-form">
+            <use href="./images/icon/m-defs.svg#close-blue-18dp"></use>
+          </svg>
+        </button>
+
         <b>Оставьте свои данные, мы вам перезвоним</b>
         <ul>
           <li>
             <input autofocus type="text" name="name" id="name" placeholder="Игорь Демьяненко" >
             <label for="name">Имя</label>
+            <svg class="icon-form">
+              <use href="./images/icon/m-defs.svg#person-black-18dp-1"></use>
+            </svg>
           </li>
 
           <li>
             <input type="tel" name="tel" id="tel" placeholder="+380 96 111 11 11">
             <label for="tel">Телефон</label>
+            <svg class="icon-form">
+              <use href="./images/icon/m-defs.svg#phone-black-18dp-1"></use>
+            </svg>
           </li>
 
           <li>
             <input type="email" name="mail" id="mail" placeholder="info@devstudio.com">
             <label for="mail">Почта</label>
+            <svg class="icon-form">
+              <use href="./images/icon/m-defs.svg#email-black-18dp-1"></use>
+            </svg>
           </li>
         </ul>
         <div class="cont-textarea">
-          <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+          <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Введите текст"></textarea>
           <label for="comment">Комментарий</label>
         </div>
-        <input type="checkbox" name="check" id="check">
-        <label for="check">
-          Соглашаюсь с рассылкой и принимаю Условия договора
+        <!-- id="check" -->
+        <label class="check-form">
+          <input type="checkbox" name="check" >
+          Соглашаюсь с рассылкой и принимаю <a>Условия договора</a>
+          <svg class="icon-form">
+            <!-- <use href="./images/icon/m-defs.svg#icon-check"></use> -->
+          </svg>
+          <svg class="icon-form">
+            <use href="./images/icon/m-defs.svg#icon-send"></use>
+          </svg>
         </label>
         <button type="submit">Отправить</button>
       </div>
