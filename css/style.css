@@ -309,7 +309,7 @@ a:focus {
   cursor: pointer;
   background-color: var(--button-accent-color, #188ce8);
 }
-
+/******************/
 .backdrop {
   position: fixed;
   top: 0;
@@ -320,10 +320,12 @@ a:focus {
   opacity: 1;
   transition: opacity 260ms linear;
 }
+
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
 }
+
 .backdrop.is-hidden .modal {
   opacity: 0.1;
   transform: translate(-50%, -50%) scale(10%);
@@ -331,7 +333,7 @@ a:focus {
 
 .modal {
   position: absolute;
-
+  text-align: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(100%);
@@ -347,7 +349,10 @@ a:focus {
 }
 
 .btn-modal {
+  outline-style: none;
+  padding: 0;
   position: absolute;
+  display: block;
   top: 8px;
   right: 8px;
   width: 30px;
@@ -355,10 +360,21 @@ a:focus {
   border-radius: 50%;
   border: 1px solid #00000033;
   background-color: #ffffff;
-  /* font-size: 18px; */
-  background-image: url(../images/icon/close.svg);
-  background-size: contain;
 }
+
+.close-form {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+.btn-modal:focus,
+.close-form:focus,
+.close-form:hover {
+  fill: #2196f3;
+  cursor: pointer;
+}
+
 .modal > b {
   display: block;
   margin-bottom: 30px;
@@ -379,30 +395,47 @@ a:focus {
   padding-left: 40px;
 }
 
+.cont-textarea,
 .modal > ul > li {
   position: relative;
-  margin-bottom: 28px;
+  /* margin-bottom: 28px; */
+}
+.modal > ul > li + li {
+  /* position: relative; */
+  margin-top: 28px;
 }
 
+/* .cont-textarea > label, */
 .modal > ul > li label {
   position: absolute;
-
-  transform: translate(0, 50%) scale(100%);
-  font-size: 18px;
+  left: 60px;
+  top: 12px;
+  transform: translate(0%, 0%) scale(150%);
+  font-size: 14px;
   line-height: 1.17;
   letter-spacing: 0.01em;
   color: #757575;
-  left: 40px;
+  left: 60px;
   transition: transform 260ms linear;
 }
-
-.cont-textarea {
-  position: relative;
+.icon-form {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 12px;
+  top: 10px;
 }
+
 .cont-textarea > label {
   position: absolute;
-  top: 0;
-  left: 20px;
+  transform: translate(0%, 0%) scale(150%);
+  font-size: 14px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: #757575;
+  top: 15px;
+  left: 60px;
+  transition: transform 260ms linear;
 }
 .modal > div > textarea {
   display: block;
@@ -412,39 +445,88 @@ a:focus {
   margin-top: 28px;
   margin-bottom: 20px;
   width: 100%;
+  padding-left: 40px;
+  padding-top: 10px;
+  overflow: hidden;
+  resize: 
+/* both | horizontal |  */ vertical;
+  /* | none */
 }
 
 .modal > input[name="check"] {
-  display: block;
+  display: inline-block;
 }
+
+.cont-textarea > textarea:focus + label,
+.cont-textarea > textarea:not(:placeholder-shown) + label,
 .modal > ul > li input:not(:placeholder-shown) + label,
 .modal > ul > li input:focus + label {
   outline-style: none;
   color: #757575;
-  transform: translate(-40px, -100%) scale(66%);
+  transform: translate(-60px, -30px) scale(100%);
 }
 
+.cont-textarea > textarea::placeholder,
 .modal > ul > li input::placeholder {
   outline-style: none;
   color: #2196f3;
   transform: translate(420px, 0);
   transition: transform 260ms linear, color 260ms linear;
 }
-
+.cont-textarea > textarea:focus::placeholder,
 .modal > ul > li input:focus::placeholder {
   outline-style: none;
   color: #afb1b8;
   transform: translate(0, 0);
 }
+
+.cont-textarea > textarea:focus,
+.cont-textarea > textarea:hover,
 .modal > ul > li input:focus,
 .modal > ul > li input:hover {
   outline-style: none;
   border-color: #2196f3;
 }
+
+.cont-textarea > textarea:hover + label,
+.cont-textarea > textarea:focus + label,
 .modal > ul > li input:focus + label,
 .modal > ul > li input:hover + label {
   outline-style: none;
   color: #2196f3;
+}
+
+.modal > ul > li input:focus ~ .icon-form,
+.modal > ul > li input:hover ~ .icon-form {
+  fill: #2196f3;
+}
+.modal > label > input[type="checkbox"] {
+  /* display: block; */
+  padding: 0px;
+  margin: 0px;
+}
+
+button[type="submit"] {
+  margin-top: 30px;
+  width: 200px;
+  height: 50px;
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  padding: 10px 55px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87;
+}
+
+button[type="submit"]:hover {
+  background: #188ce8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 
 /*********особенности*************/
@@ -690,7 +772,11 @@ address {
   /* text-align: center; */
   margin-bottom: 20px;
 }
-
+.email-foo {
+  width: 570px;
+  height: 88px;
+  margin-left: 93px;
+}
 /*********************************/
 /******конец страницы*************/
 /*********************************/
