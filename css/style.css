@@ -433,7 +433,7 @@ a:focus {
   line-height: 1.17;
   letter-spacing: 0.01em;
   color: #757575;
-  top: 15px;
+  top: 13px;
   left: 60px;
   transition: transform 260ms linear;
 }
@@ -457,6 +457,13 @@ a:focus {
   display: inline-block;
 }
 
+.us {
+  color: #2196f3;
+  text-decoration: 1px solid #2196f3;
+}
+.us:hover {
+  cursor: pointer;
+}
 .cont-textarea > textarea:focus + label,
 .cont-textarea > textarea:not(:placeholder-shown) + label,
 .modal > ul > li input:not(:placeholder-shown) + label,
@@ -506,7 +513,7 @@ a:focus {
   margin: 0px;
 }
 
-button[type="submit"] {
+.modal > button[type="submit"] {
   margin-top: 30px;
   width: 200px;
   height: 50px;
@@ -523,12 +530,13 @@ button[type="submit"] {
   line-height: 1.87;
 }
 
-button[type="submit"]:hover {
+.modal > button[type="submit"]:hover {
   background: #188ce8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   cursor: pointer;
 }
 
+/* appearance: none; */
 /*********особенности*************/
 .invisible {
   display: none;
@@ -723,8 +731,6 @@ footer {
 }
 address {
   margin-top: 20px;
-
-  /* line-height: 24px; */
   font-style: normal;
 }
 .list-adr > li + li {
@@ -744,14 +750,13 @@ address {
   width: 208px;
   padding-top: 15px;
   margin-left: 70px;
-  /* margin-top: 75px; */
 }
+
 .foo-social-link {
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color2, #fff);
-  /* background-color: ffffff; */
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 44px;
   height: 44px;
@@ -762,20 +767,79 @@ address {
   background-color: var(--primary-accent-color);
   color: #ffffff;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  /**/
 }
 .social-title {
   text-transform: uppercase;
   color: var(--white-txt-color);
   font-size: 14px;
   line-height: 1.14;
-  /* text-align: center; */
   margin-bottom: 20px;
 }
 .email-foo {
+  padding-top: 15px;
   width: 570px;
   height: 88px;
   margin-left: 93px;
+}
+
+.email-foo > div {
+  display: flex;
+  position: relative;
+}
+
+.email-foo > div > input {
+  width: 358px;
+  height: 50px;
+  border-style: none;
+  background-color: var(--primary-bg-color);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+
+.email-foo label[for="email-foo"] {
+  position: absolute;
+  top: 18px;
+  left: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  line-height: 1.14;
+  z-index: 100;
+}
+
+.email-foo > div > input:hover,
+.email-foo > div > input:focus {
+  border: 1px solid #188ce8;
+}
+
+.email-foo > div > button {
+  width: 200px;
+  height: 50px;
+  background: #2196f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87;
+  margin-left: 12px;
+}
+
+.email-foo > div > button:hover {
+  cursor: pointer;
+  background: #188ce8;
+  border: 1px solid #188ce8;
+}
+
+.icon-foo {
+  position: relative;
+  top: 6px;
+  left: 5px;
+  fill: #ffffff;
+  width: 24px;
+  height: 24px;
 }
 /*********************************/
 /******конец страницы*************/
