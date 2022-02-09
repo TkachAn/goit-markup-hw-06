@@ -556,8 +556,30 @@ a:focus {
 }
 /* > .check-form > */
 .modal input[name="check"] {
+  /* display: inline-block; */
+}
+
+.checkbox {
   appearance: none;
   display: inline-block;
+  margin: 0;
+  padding: 0;
+
+  width: 16px;
+  height: 16px;
+  background-image: url(../images/icon/svgM/Vector2.svg);
+  fill: #2196f3;
+}
+
+.checkbox:checked {
+  background-image: url(../images/icon/svgM/icon\ check1.svg);
+  fill: #2196f3;
+}
+
+.icon-check {
+  width: 20px;
+  height: 20px;
+  background-color: #2196f3;
 }
 
 .us {
