@@ -361,6 +361,8 @@ a:focus {
   transform: translate(-50%, -50%) scale(10%);
 }
 
+/**/
+
 .modal {
   position: absolute;
   text-align: center;
@@ -397,7 +399,11 @@ a:focus {
   width: 20px;
   height: 20px;
   margin: auto;
+  /* fill: #212121; */
+  transition: fill 260ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
+
 .btn-modal:focus,
 .close-form:focus,
 .close-form:hover {
@@ -412,9 +418,28 @@ a:focus {
   line-height: 23px;
   text-align: center;
   letter-spacing: 0.03em;
-
   color: #212121;
+  transition: after 260ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
+[data-tooltip] {
+    position: relative; /* Относительное позиционирование */ 
+   }
+   [data-tooltip]::after {
+    content: attr(data-tooltip);
+    /* <abbr title="I'm small tooltip. Don't kill me!">Hover me!</abbr> */
+    position: absolute;
+    right: 0; top: 0;
+    color: #2196f360;
+    pointer-events: none;
+    opacity: 0;
+   } 
+   [data-tooltip]:hover::after {
+    opacity: 1;
+    top: 54px; transition: 5s;
+   }
+
 .modal > ul > li input {
   width: 100%;
   height: 40px;
@@ -423,15 +448,15 @@ a:focus {
   border-radius: 4px;
   /* #2196F3 */
   padding-left: 40px;
+  transition: border 260ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cont-textarea,
 .modal > ul > li {
   position: relative;
-  /* margin-bottom: 28px; */
 }
+
 .modal > ul > li + li {
-  /* position: relative; */
   margin-top: 28px;
 }
 
@@ -444,16 +469,22 @@ a:focus {
   font-size: 14px;
   line-height: 1.17;
   letter-spacing: 0.01em;
-  color: #757575;
+  color:  #c4c4c4;
   left: 60px;
-  transition: transform 260ms linear;
+  transition: ;
+  transition: color 260ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 260ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
 }
-.icon-form {
+
+.icon-modal {
   position: absolute;
   width: 20px;
   height: 20px;
   left: 12px;
   top: 10px;
+  fill: #212121;
+  transition: fill 260ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cont-textarea > label {
@@ -462,10 +493,11 @@ a:focus {
   font-size: 14px;
   line-height: 1.17;
   letter-spacing: 0.01em;
-  color: #757575;
+  color:  #c4c4c4;
   top: 13px;
   left: 60px;
-  transition: transform 260ms linear;
+  transition: transform 260ms  cubic-bezier(0.4, 0, 0.2, 1), color 260ms linear;
+;
 }
 .modal > div > textarea {
   display: block;
@@ -478,9 +510,8 @@ a:focus {
   padding-left: 40px;
   padding-top: 10px;
   overflow: hidden;
-  resize: 
-/* both | horizontal |  */ vertical;
-  /* | none */
+  resize: vertical;
+  transition: border 260ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cont-textarea > textarea:focus + label,
@@ -488,7 +519,7 @@ a:focus {
 .modal > ul > li input:not(:placeholder-shown) + label,
 .modal > ul > li input:focus + label {
   outline-style: none;
-  color: #757575;
+  /* color: #c4c4c4; */
   transform: translate(-60px, -30px) scale(100%);
 }
 
@@ -497,8 +528,10 @@ a:focus {
   outline-style: none;
   color: #2196f3;
   transform: translate(420px, 0);
-  transition: transform 260ms linear, color 260ms linear;
+  transition: transform 260ms  cubic-bezier(0.4, 0, 0.2, 1);
+, color 260ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+ 
 .cont-textarea > textarea:focus::placeholder,
 .modal > ul > li input:focus::placeholder {
   outline-style: none;
@@ -522,14 +555,9 @@ a:focus {
   color: #2196f3;
 }
 
-.modal > ul > li input:focus ~ .icon-form,
-.modal > ul > li input:hover ~ .icon-form {
+.modal > ul > li input:focus ~ .icon-modal,
+.modal > ul > li input:hover ~ .icon-modal {
   fill: #2196f3;
-}
-.modal > label > input[type="checkbox"] {
-  /* display: block; */
-  padding: 0px;
-  margin: 0px;
 }
 
 .modal > button[type="submit"] {
@@ -547,48 +575,61 @@ a:focus {
   font-weight: bold;
   font-size: 16px;
   line-height: 1.87;
+  transition: background-color 260ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 260ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal > button[type="submit"]:hover {
   background: #188ce8;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); */
   cursor: pointer;
 }
-/* > .check-form > */
-.modal input[name="check"] {
-  /* display: inline-block; */
-}
 
+.check-modal {
+  display: inline-block;cursor: pointer;
+}
 .checkbox {
   appearance: none;
   display: inline-block;
-  margin: 0;
-  padding: 0;
-
-  width: 16px;
-  height: 16px;
-  background-image: url(../images/icon/svgM/Vector2.svg);
-  fill: #2196f3;
-}
-
-.checkbox:checked {
-  background-image: url(../images/icon/svgM/icon\ check1.svg);
-  fill: #2196f3;
 }
 
 .icon-check {
-  width: 20px;
-  height: 20px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #212121;
+  border-radius: 2px;
+  background-color: #ffffff;
+  transition: background-color 260ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 260ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+.checkbox:focus + .icon-check,
+.checkbox:hover + .icon-check {
+  border: 2px solid #2196f3;
+  
+}
+
+.checkbox:checked + .icon-check {
   background-color: #2196f3;
+  border: 2px solid #2196f3;
+  background-image: url(../images/icon/svgM/Vector1.svg);
 }
 
 .us {
   color: #2196f3;
-  text-decoration: 1px solid #2196f3;
+  text-decoration:none;
+  transition: all 1260ms cubic-bezier(0.4, 0, 0.2, 1)
+  /* , text-decoration 1260ms cubic-bezier(0.4, 0, 0.2, 1) */
+  ;
 }
 .us:hover {
+  color: #188ce8;
+  text-decoration: underline;
   cursor: pointer;
+  
 }
+
 /* appearance: none; */
 /*********особенности*************/
 
@@ -831,6 +872,7 @@ address {
   line-height: 1.14;
   margin-bottom: 20px;
 }
+/**/
 .email-foo {
   padding-top: 15px;
   width: 570px;
@@ -851,9 +893,10 @@ address {
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
+  transition: border 260ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.email-foo label[for="email-foo"] {
+.email-foo label[for="email-label"] {
   position: absolute;
   top: 18px;
   left: 16px;
@@ -866,6 +909,13 @@ address {
 .email-foo > div > input:hover,
 .email-foo > div > input:focus {
   border: 1px solid #188ce8;
+}
+
+input:-internal-autofill-selected {
+    appearance: menulist-button;
+    /* background-image: none !important; */
+    background-color:var(--primary-bg-color) !important;
+    color:#eeeeee !important;
 }
 
 .email-foo > div > button {
@@ -881,22 +931,43 @@ address {
   font-size: 16px;
   line-height: 1.87;
   margin-left: 12px;
+  transition: 
+  /* transform 260ms cubic-bezier(0.4, 0, 0.2, 1)
+  ,  */
+  background-color 260ms cubic-bezier(0.4, 0, 0.2, 1)
+ 
+  ;
 }
 
 .email-foo > div > button:hover {
   cursor: pointer;
   background: #188ce8;
   border: 1px solid #188ce8;
+  /* transform: rotate(360deg); */
+  transition: transform 260ms cubic-bezier(0.4, 0, 0.2, 1)
+  , fill 1260ms cubic-bezier(0.4, 0, 0.2, 1)
+  ;
 }
 
 .icon-foo {
   position: relative;
+  display: inline-block;
   top: 6px;
   left: 5px;
   fill: #ffffff;
   width: 24px;
   height: 24px;
+  /* transform: rotate(1deg); */
+  
 }
+/* .email-foo > div > button:hover~ */
+.icon-foo:hover {
+  
+  transform: rotate(360deg);
+  transition: transform 1260ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
 /*********************************/
 /******конец страницы*************/
 /*********************************/
